@@ -1,0 +1,16 @@
+<!-- ============================================================
+     传感器卡片
+     ============================================================ -->
+<view class="sensor-card">
+  <view class="card-title">
+    <text class="card-icon">{{icon}}</text>
+    <text class="card-label">{{title}}</text>
+  </view>
+  <view class="card-body">
+    <text class="card-value">{{value}}</text>
+    <text class="card-unit" wx:if="{{unit}}">{{unit}}</text>
+  </view>
+  <view class="card-footer">
+    <text class="status-tag" style="color: {{statusColor}}">{{statusLabel}}</text>
+  </view>
+</view>

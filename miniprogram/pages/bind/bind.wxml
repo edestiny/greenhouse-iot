@@ -1,0 +1,41 @@
+<!-- ============================================================
+     设备绑定页
+     ============================================================ -->
+<view class="container">
+  <!-- 说明 -->
+  <view class="intro card">
+    <text class="intro-title">如何绑定？</text>
+    <text class="intro-text">1. 在 Arduino 设备上查看到激活码</text>
+    <text class="intro-text">2. 手动输入或扫描二维码</text>
+    <text class="intro-text">3. 点击「确认绑定」完成</text>
+  </view>
+
+  <!-- 输入激活码 -->
+  <view class="form card">
+    <view class="input-group">
+      <text class="label">设备激活码</text>
+      <input
+        class="input"
+        placeholder="请输入 6 位激活码"
+        maxlength="16"
+        value="{{code}}"
+        bindinput="onCodeInput"
+      />
+    </view>
+
+    <text wx:if="{{error}}" class="error-msg">{{error}}</text>
+
+    <button
+      class="btn btn-primary btn-block mt-24"
+      bindtap="onBind"
+      loading="{{loading}}"
+      disabled="{{loading}}"
+    >
+      {{loading ? '绑定中...' : '确认绑定'}}
+    </button>
+
+    <button class="btn btn-outline btn-block mt-16" bindtap="onScanCode">
+      扫描二维码绑定
+    </button>
+  </view>
+</view>

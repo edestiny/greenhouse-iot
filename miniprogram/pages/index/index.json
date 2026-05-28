@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "device-card": "/components/device-card/index"
+  },
+  "navigationBarTitleText": "我的温室",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

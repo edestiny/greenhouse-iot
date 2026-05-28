@@ -1,0 +1,99 @@
+/* ---- 时间范围 ---- */
+.period-tabs {
+  display: flex;
+  padding: 8rpx;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 12rpx 0;
+  font-size: 28rpx;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  transition: all 0.2s;
+}
+
+.tab.active {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* ---- 类型切换 ---- */
+.type-tabs {
+  margin: 16rpx 0;
+}
+
+.type-scroll {
+  white-space: nowrap;
+}
+
+.type-tab {
+  display: inline-block;
+  padding: 12rpx 24rpx;
+  font-size: 26rpx;
+  border-radius: 32rpx;
+  margin-right: 12rpx;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  transition: all 0.2s;
+}
+
+.type-tab.active {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* ---- 图表占位 ---- */
+.chart-area {
+  min-height: 400rpx;
+}
+
+.chart-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 360rpx;
+  background: #f9fafb;
+  border-radius: var(--radius-sm);
+  border: 2rpx dashed var(--border-color);
+}
+
+.chart-note {
+  font-size: 32rpx;
+  color: var(--text-muted);
+  margin-bottom: 8rpx;
+}
+
+.chart-note-sub {
+  font-size: 24rpx;
+  color: #cccccc;
+}
+
+/* ---- 统计摘要 ---- */
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16rpx;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 22rpx;
+  color: var(--text-muted);
+  margin-bottom: 4rpx;
+}
+
+.stat-value {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+/* ---- 颜色 ---- */
+.text-info { color: var(--info); }

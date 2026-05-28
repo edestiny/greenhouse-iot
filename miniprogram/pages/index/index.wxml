@@ -1,0 +1,33 @@
+<!-- ============================================================
+     设备列表页
+     ============================================================ -->
+<view class="container">
+  <!-- 加载中 -->
+  <view wx:if="{{loading}}" class="loading-center">
+    <text class="text-muted">加载中...</text>
+  </view>
+
+  <!-- 空状态 -->
+  <view wx:elif="{{!hasDevices}}" class="empty-state">
+    <text class="icon">🏠</text>
+    <text class="text">还没有绑定温室设备</text>
+    <button class="btn btn-primary mt-24" bindtap="onBindDevice">绑定设备</button>
+  </view>
+
+  <!-- 设备列表 -->
+  <view wx:else>
+    <view wx:for="{{devices}}" wx:key="id">
+      <device-card
+        device="{{item}}"
+        bind:tap="onDeviceTap"
+        data-id="{{item.id}}"
+      />
+    </view>
+
+    <!-- 添加新设备 -->
+    <view class="add-card card" bindtap="onBindDevice">
+      <text class="add-icon">+</text>
+      <text class="add-text">添加新设备</text>
+    </view>
+  </view>
+</view>

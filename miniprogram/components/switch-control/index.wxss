@@ -1,0 +1,52 @@
+.switch-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.switch-label {
+  font-size: 26rpx;
+  color: var(--text-secondary);
+}
+
+.switch-track {
+  width: 72rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  background: #dddddd;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.switch-track.active {
+  background: var(--primary);
+}
+
+.switch-thumb {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  background: #ffffff;
+  position: absolute;
+  top: 4rpx;
+  left: 4rpx;
+  box-shadow: 0 2rpx 4rpx rgba(0,0,0,0.15);
+  transition: left 0.3s;
+}
+
+.switch-thumb.active {
+  left: 36rpx;
+}
+
+.switch-state {
+  font-size: 22rpx;
+}
+
+.switch-state.on {
+  color: var(--primary);
+}
+
+.switch-state.off {
+  color: var(--text-muted);
+}

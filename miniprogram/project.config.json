@@ -1,0 +1,43 @@
+{
+  "description": "温室 IoT 远程监控系统",
+  "packOptions": {
+    "ignore": [
+      { "type": "folder", "value": ".git" },
+      { "type": "folder", "value": "node_modules" },
+      { "type": "file",  "value": ".gitignore" }
+    ]
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "preloadBackgroundData": false,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "condition": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "3.3.0",
+  "appid": "YOUR_APPID_HERE",
+  "projectname": "greenhouse-iot",
+  "condition": {}
+}

@@ -1,0 +1,12 @@
+# 依赖
+node_modules/
+
+# 微信开发者工具
+.miniprogram-ci/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log

@@ -1,0 +1,65 @@
+.device-card {
+  cursor: pointer;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+}
+
+.device-icon {
+  font-size: 48rpx;
+  margin-right: 16rpx;
+}
+
+.device-info {
+  flex: 1;
+}
+
+.device-name {
+  display: block;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.device-id {
+  display: block;
+  font-size: 22rpx;
+  color: var(--text-muted);
+  margin-top: 2rpx;
+}
+
+.online-badge {
+  font-size: 22rpx;
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+.online-badge.online {
+  background: #d5f5e3;
+  color: #27ae60;
+}
+
+.online-badge.offline {
+  background: #fadbd8;
+  color: #c0392b;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16rpx;
+  padding-top: 16rpx;
+  border-top: 1rpx solid var(--border-color);
+}
+
+.last-seen {
+  font-size: 24rpx;
+  color: var(--text-muted);
+}
+
+.enter-arrow {
+  font-size: 28rpx;
+  color: var(--primary);
+}

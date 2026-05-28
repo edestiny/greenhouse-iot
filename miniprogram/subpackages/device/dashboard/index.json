@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "sensor-card": "/components/sensor-card/index",
+    "switch-control": "/components/switch-control/index"
+  },
+  "navigationBarTitleText": "实时仪表盘"
+}

@@ -1,0 +1,38 @@
+.section {
+  margin-bottom: 16rpx;
+}
+
+.section-title {
+  display: block;
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 4rpx;
+}
+
+.section-desc {
+  display: block;
+  font-size: 24rpx;
+  color: var(--text-muted);
+  margin-bottom: 20rpx;
+}
+
+.slider-group {
+  margin-bottom: 16rpx;
+}
+
+.slider-label {
+  display: block;
+  font-size: 26rpx;
+  color: var(--text-secondary);
+  margin-bottom: 4rpx;
+}
+
+slider {
+  width: 100%;
+}
+
+.tip {
+  display: block;
+  font-size: 24rpx;
+  line-height: 1.6;
+}

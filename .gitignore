@@ -1,0 +1,43 @@
+# WorkBuddy
+.workbuddy/
+
+# Dependencies
+node_modules/
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# Database
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build outputs
+miniprogram/miniprogram_npm/
+
+# Logs
+*.log
+logs/
+
+# Arduino build artifacts
+*.hex
+*.elf
+*.o
+build/
+
+# DevTools local config (contains machine-specific paths)
+miniprogram/project.private.config.json
+server/data/

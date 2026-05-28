@@ -1,0 +1,12 @@
+<!-- ============================================================
+     开关控制组件
+     ============================================================ -->
+<view class="switch-item" bindtap="onToggle">
+  <text class="switch-label">{{label}}</text>
+  <view class="switch-track {{checked ? 'active' : ''}}">
+    <view class="switch-thumb {{checked ? 'active' : ''}}"></view>
+  </view>
+  <text class="switch-state {{checked ? 'on' : 'off'}}">
+    {{checked ? '开启' : '关闭'}}
+  </text>
+</view>

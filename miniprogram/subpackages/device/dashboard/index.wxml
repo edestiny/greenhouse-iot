@@ -1,0 +1,77 @@
+<!-- ============================================================
+     实时仪表盘
+     ============================================================ -->
+<view class="container">
+  <!-- 顶部状态栏 -->
+  <view class="status-bar">
+    <text class="device-name">{{deviceName}}</text>
+    <view class="online-badge {{isOnline ? 'online' : 'offline'}}">
+      {{isOnline ? '在线' : '离线'}}
+    </view>
+    <text class="last-update" wx:if="{{lastUpdate}}">{{lastUpdate}} 更新</text>
+  </view>
+
+  <!-- 传感器卡片网格 -->
+  <view class="sensor-grid">
+    <sensor-card
+      title="温度"
+      value="{{sensorData.temperature}}"
+      unit="°C"
+      type="temperature"
+      icon="🌡️"
+    />
+    <sensor-card
+      title="空气湿度"
+      value="{{sensorData.humidity}}"
+      unit="%"
+      type="humidity"
+      icon="💧"
+    />
+    <sensor-card
+      title="土壤 pH"
+      value="{{sensorData.soilPH}}"
+      unit=""
+      type="soilPH"
+      icon="🧪"
+    />
+    <sensor-card
+      title="水位"
+      value="{{sensorData.waterLevel}}"
+      unit="%"
+      type="waterLevel"
+      icon="💦"
+    />
+    <sensor-card
+      title="光照"
+      value="{{sensorData.light}}"
+      unit="lux"
+      type="light"
+      icon="☀️"
+    />
+    <view class="sensor-card control-card">
+      <text class="control-label">手动控制</text>
+      <view class="control-buttons">
+        <switch-control
+          label="水泵"
+          checked="{{pumpState}}"
+          bind:toggle="onTogglePump"
+        />
+        <switch-control
+          label="补光灯"
+          checked="{{lampState}}"
+          bind:toggle="onToggleLamp"
+        />
+      </view>
+    </view>
+  </view>
+
+  <!-- 快捷入口 -->
+  <view class="quick-actions">
+    <button class="btn btn-primary btn-block" bindtap="onHistory">
+      查看历史数据
+    </button>
+    <button class="btn btn-outline btn-block mt-16" bindtap="onSettings">
+      参数设置
+    </button>
+  </view>
+</view>

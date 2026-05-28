@@ -1,0 +1,59 @@
+.user-header {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  margin-right: 24rpx;
+  background: #e8e8e8;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.nickname {
+  font-size: 32rpx;
+  font-weight: 600;
+  display: block;
+}
+
+.uid {
+  font-size: 24rpx;
+  color: var(--text-muted);
+  margin-top: 4rpx;
+}
+
+/* ---- 菜单 ---- */
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx 0;
+  font-size: 30rpx;
+}
+
+.menu-item + .menu-item {
+  border-top: 1rpx solid var(--border-color);
+}
+
+.arrow {
+  font-size: 36rpx;
+  color: var(--text-muted);
+}
+
+/* ---- 退出 ---- */
+.logout-section {
+  margin-top: 48rpx;
+  text-align: center;
+}
+
+.version {
+  display: block;
+  margin-top: 24rpx;
+  font-size: 24rpx;
+  color: var(--text-muted);
+}

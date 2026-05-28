@@ -1,0 +1,21 @@
+/* ---- 添加设备卡片 ---- */
+.add-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200rpx;
+  border: 2rpx dashed var(--border-color);
+  background: transparent;
+}
+
+.add-icon {
+  font-size: 64rpx;
+  color: var(--primary);
+  margin-bottom: 12rpx;
+}
+
+.add-text {
+  font-size: 28rpx;
+  color: var(--text-muted);
+}

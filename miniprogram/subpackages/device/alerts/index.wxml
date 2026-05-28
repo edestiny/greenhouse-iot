@@ -1,0 +1,27 @@
+<!-- ============================================================
+     告警列表页
+     ============================================================ -->
+<view class="container">
+  <view wx:if="{{loading}}" class="loading-center">
+    <text class="text-muted">加载中...</text>
+  </view>
+
+  <view wx:elif="{{!hasAlerts}}" class="empty-state">
+    <text class="icon">✅</text>
+    <text class="text">暂无告警记录</text>
+    <text class="text-muted mt-16">一切运行正常</text>
+  </view>
+
+  <view wx:else>
+    <view wx:for="{{alerts}}" wx:key="id" class="card alert-item {{item.resolved ? 'resolved' : ''}}">
+      <view class="alert-header flex-between">
+        <view class="flex-row">
+          <view class="level-badge {{item.levelClass}}">{{item.levelText}}</view>
+          <text class="time-text">{{item.timeText}}</text>
+        </view>
+        <text wx:if="{{item.resolved}}" class="resolved-badge">已解决</text>
+      </view>
+      <text class="alert-msg">{{item.message}}</text>
+    </view>
+  </view>
+</view>

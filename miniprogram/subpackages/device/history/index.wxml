@@ -1,0 +1,69 @@
+<!-- ============================================================
+     历史数据页
+     ============================================================ -->
+<view class="container">
+  <!-- 时间范围切换 -->
+  <view class="card period-tabs">
+    <view
+      wx:for="{{['day', 'week', 'month']}}"
+      wx:key="*this"
+      class="tab {{period === item ? 'active' : ''}}"
+      data-period="{{item}}"
+      bindtap="onPeriodChange"
+    >
+      {{item === 'day' ? '日' : (item === 'week' ? '周' : '月')}}
+    </view>
+  </view>
+
+  <!-- 传感器类型切换 -->
+  <view class="type-tabs">
+    <scroll-view scroll-x class="type-scroll">
+      <view
+        wx:for="{{sensorTypes}}"
+        wx:key="key"
+        class="type-tab {{sensorType === item.key ? 'active' : ''}}"
+        data-type="{{item.key}}"
+        bindtap="onTypeChange"
+      >
+        {{item.label}}
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 简易折线图区域（用 canvas 或 echarts，这里用占位） -->
+  <view class="card chart-area">
+    <view wx:if="{{loading}}" class="loading-center">
+      <text class="text-muted">加载中...</text>
+    </view>
+    <view wx:elif="{{dataPoints.length === 0}}" class="empty-state">
+      <text class="text">暂无数据</text>
+    </view>
+    <view wx:else>
+      <!-- TODO: 接入 canvas 图表组件 -->
+      <view class="chart-placeholder">
+        <text class="chart-note">折线图区域</text>
+        <text class="chart-note-sub">数据点: {{dataPoints.length}} 个</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 统计摘要 -->
+  <view class="card stats" wx:if="{{dataPoints.length > 0}}">
+    <view class="stat-item">
+      <text class="stat-label">平均</text>
+      <text class="stat-value">{{stats.avg}}</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-label">最高</text>
+      <text class="stat-value text-danger">{{stats.max}}</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-label">最低</text>
+      <text class="stat-value text-info">{{stats.min}}</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-label">当前</text>
+      <text class="stat-value text-success">{{stats.current}}</text>
+    </view>
+  </view>
+</view>

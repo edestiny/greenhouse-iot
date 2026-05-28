@@ -1,0 +1,110 @@
+<!-- ============================================================
+     参数设置页
+     ============================================================ -->
+<view class="container">
+  <view wx:if="{{loading}}" class="loading-center">
+    <text class="text-muted">加载中...</text>
+  </view>
+
+  <view wx:else>
+    <!-- 自动灌溉 -->
+    <view class="card section">
+      <text class="section-title">自动灌溉</text>
+      <text class="section-desc">土壤湿度低于设定值时自动开启灌溉</text>
+      <view class="slider-group">
+        <text class="slider-label">湿度下限: {{humidityMin}}%</text>
+        <slider
+          min="{{humidityRange.min}}"
+          max="{{humidityRange.max}}"
+          value="{{humidityMin}}"
+          activeColor="#3498db"
+          block-size="20"
+          data-field="humidityMin"
+          bindchange="onSliderChange"
+        />
+      </view>
+    </view>
+
+    <!-- 土壤 pH 范围 -->
+    <view class="card section">
+      <text class="section-title">土壤 pH 范围</text>
+      <text class="section-desc">超出范围时产生告警</text>
+      <view class="slider-group">
+        <text class="slider-label">pH 最小值: {{phMin}}</text>
+        <slider
+          min="{{phRange.min}}"
+          max="{{phRange.max}}"
+          step="0.1"
+          value="{{phMin}}"
+          activeColor="#2ecc71"
+          block-size="20"
+          data-field="phMin"
+          bindchange="onSliderChange"
+        />
+      </view>
+      <view class="slider-group">
+        <text class="slider-label">pH 最大值: {{phMax}}</text>
+        <slider
+          min="{{phRange.min}}"
+          max="{{phRange.max}}"
+          step="0.1"
+          value="{{phMax}}"
+          activeColor="#e74c3c"
+          block-size="20"
+          data-field="phMax"
+          bindchange="onSliderChange"
+        />
+      </view>
+    </view>
+
+    <!-- 自动补光 -->
+    <view class="card section">
+      <text class="section-title">自动补光</text>
+      <text class="section-desc">光照低于设定值时自动开启补光灯</text>
+      <view class="slider-group">
+        <text class="slider-label">光照下限: {{lightMin}} lux</text>
+        <slider
+          min="{{lightRange.min}}"
+          max="{{lightRange.max}}"
+          value="{{lightMin}}"
+          activeColor="#f39c12"
+          block-size="20"
+          data-field="lightMin"
+          bindchange="onSliderChange"
+        />
+      </view>
+    </view>
+
+    <!-- 上报间隔 -->
+    <view class="card section">
+      <text class="section-title">数据上报间隔</text>
+      <text class="section-desc">传感器数据上报到云端的频率</text>
+      <view class="slider-group">
+        <text class="slider-label">间隔: {{reportInterval}} 秒</text>
+        <slider
+          min="{{intervalRange.min}}"
+          max="{{intervalRange.max}}"
+          value="{{reportInterval}}"
+          activeColor="#9b59b6"
+          block-size="20"
+          data-field="reportInterval"
+          bindchange="onSliderChange"
+        />
+      </view>
+    </view>
+
+    <!-- 保存按钮 -->
+    <button
+      class="btn btn-primary btn-block"
+      bindtap="onSave"
+      loading="{{saving}}"
+      disabled="{{saving}}"
+    >
+      {{saving ? '保存中...' : '保存并下发到设备'}}
+    </button>
+
+    <text class="tip text-muted text-center mt-16">
+      修改后会自动通过 MQTT 下发到 Arduino 设备，设备将在下一个检测周期应用新参数
+    </text>
+  </view>
+</view>

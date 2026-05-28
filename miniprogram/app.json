@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/bind/bind",
+    "pages/user/user"
+  ],
+  "subpackages": [
+    {
+      "root": "subpackages/device",
+      "name": "device",
+      "pages": [
+        "dashboard/index",
+        "settings/index",
+        "history/index",
+        "alerts/index"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": ["device"]
+    }
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#2ecc71",
+    "navigationBarTitleText": "温室管家",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5f7fa",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#2ecc71",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "设备",
+        "iconPath": "images/tab-device.png",
+        "selectedIconPath": "images/tab-device-active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/tab-user.png",
+        "selectedIconPath": "images/tab-user-active.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于获取温室地理位置"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

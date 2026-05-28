@@ -1,0 +1,19 @@
+<!-- ============================================================
+     设备列表卡片
+     ============================================================ -->
+<view class="device-card card">
+  <view class="card-top">
+    <view class="device-icon">🌿</view>
+    <view class="device-info">
+      <text class="device-name">{{device.name || '我的温室'}}</text>
+      <text class="device-id">ID: {{device.id}}</text>
+    </view>
+    <view class="online-badge {{onlineClass}}">
+      {{onlineClass === 'online' ? '在线' : '离线'}}
+    </view>
+  </view>
+  <view class="card-bottom">
+    <text class="last-seen">最近活动: {{device.lastSeenText}}</text>
+    <text class="enter-arrow">进入 ›</text>
+  </view>
+</view>

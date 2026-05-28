@@ -1,0 +1,48 @@
+.alert-item {
+  margin-bottom: 12rpx;
+}
+
+.alert-item.resolved {
+  opacity: 0.6;
+}
+
+.alert-header {
+  margin-bottom: 8rpx;
+}
+
+.level-badge {
+  font-size: 22rpx;
+  padding: 2rpx 12rpx;
+  border-radius: 16rpx;
+  margin-right: 12rpx;
+}
+
+.level-badge.critical {
+  background: #fadbd8;
+  color: #c0392b;
+}
+
+.level-badge.warning {
+  background: #fdebd0;
+  color: #e67e22;
+}
+
+.time-text {
+  font-size: 24rpx;
+  color: var(--text-muted);
+}
+
+.resolved-badge {
+  font-size: 22rpx;
+  color: var(--primary);
+  background: #d5f5e3;
+  padding: 2rpx 12rpx;
+  border-radius: 16rpx;
+}
+
+.alert-msg {
+  display: block;
+  font-size: 28rpx;
+  color: var(--text-primary);
+  line-height: 1.6;
+}

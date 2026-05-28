@@ -1,0 +1,52 @@
+.sensor-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 20rpx 24rpx;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.card-icon {
+  font-size: 32rpx;
+  margin-right: 8rpx;
+}
+
+.card-label {
+  font-size: 24rpx;
+  color: var(--text-muted);
+}
+
+.card-body {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 8rpx;
+}
+
+.card-value {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.card-unit {
+  font-size: 24rpx;
+  color: var(--text-secondary);
+  margin-left: 4rpx;
+}
+
+.card-footer {
+  display: flex;
+}
+
+.status-tag {
+  font-size: 22rpx;
+  background: #f5f7fa;
+  padding: 2rpx 12rpx;
+  border-radius: 12rpx;
+}
