@@ -36,8 +36,8 @@ const getMe = async (req, res, next) => {
 // ---- Service ----
 const authService = {
   async login(code) {
-    // ── 开发模式：未配置真实 AppID 时跳过微信 API ──
-    const IS_DEV = !config.wx.appid || config.wx.appid === 'your_appid_here';
+    // ── 开发模式：未配置真实 AppSecret 时跳过微信 API ──
+    const IS_DEV = !config.wx.appid || config.wx.appid === 'your_appid_here' || !config.wx.secret;
     if (IS_DEV) {
       console.warn('[Auth] 开发模式 — 未配置真实 AppID，使用模拟 openid');
       // 用 code 的简单 hash 模拟唯一 openid

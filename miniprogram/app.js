@@ -32,6 +32,8 @@ App({
       .then((user) => {
         this.globalData.userInfo = user;
         console.log('[App] 登录成功', user.uid);
+        // 通知所有页面登录已完成，可安全发请求
+        this.globalData.eventBus.emit('login:success');
       })
       .catch((err) => {
         console.error('[App] 登录失败', err);

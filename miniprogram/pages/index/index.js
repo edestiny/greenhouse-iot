@@ -6,11 +6,24 @@ const { getDevices } = require('../../services/device');
 const { formatTimeRelative } = require('../../utils/util');
 const logger = require('../../utils/logger');
 
+const app = getApp();
+
 Page({
   data: {
     devices: [],
     loading: true,
     hasDevices: false,
+  },
+
+  onLoad() {
+    // 监听登录成功事件 — 解决 onShow 先于 login 完成的时序问题
+    app.globalData.eventBus.on('login:success', () => {
+      this.loadDevices();
+    });
+  },
+
+  onUnload() {
+    app.globalData.eventBus.off('login:success');
   },
 
   /**
